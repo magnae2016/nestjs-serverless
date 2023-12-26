@@ -17,3 +17,15 @@ functions:
       - http:
           method: ANY
           path: '{proxy+}'
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+
+package:
+  patterns:
+    - '!**'
+    - package.json
+    - package-lock.json
+    - dist/**
+    - config/production.js
