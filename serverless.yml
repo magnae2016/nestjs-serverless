@@ -12,11 +12,23 @@ functions:
     handler: dist/main.handler
     events:
       - http:
-          method: ANY
-          path: /
+          method: GET
+          path: '/'
+  workaround:
+    handler: dist/workaround.handler
+    events:
       - http:
-          method: ANY
-          path: '{proxy+}'
+          method: POST
+          path: '/users'
+      - http:
+          method: POST
+          path: '/users/email-verify'
+      - http:
+          method: POST
+          path: '/users/login'
+      - http:
+          method: GET
+          path: '/users/{id}'
 
 custom:
   serverless-offline:
