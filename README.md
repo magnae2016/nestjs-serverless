@@ -1,3 +1,13 @@
+# 20231227
+
+## 한 일
+- nestjs의 middleware 적용
+- users route에 적용 => .forRoutes('users');
+- users 중 POST 요청에 적용 => .forRoutes({ path: 'users/*', method: RequestMethod.POST }); // path를 원하는대로 지정할 수 있음
+- exclude 도 지정할 수 있음
+- configure 안에서 consumer를 여러개 정의할 수 있음
+- configure 안에서 apply안에서 여러개의 middleware를 적용할 수 있음
+
 # 20231226
 
 ## 한 일
