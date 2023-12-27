@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
 import {
   CreateUserDto,
+  TokenIdDto,
   UserLoginDto,
   VerifyEmailDto,
 } from "./dto/create-user.dto";
@@ -14,8 +15,9 @@ export class UsersController {
   }
 
   @Post("/email-verify")
-  async verifyEmail(@Query() dto: VerifyEmailDto): Promise<string> {
+  async verifyEmail(@Query() dto: VerifyEmailDto, @Body() body: TokenIdDto): Promise<string> {
     console.log(dto);
+    console.log(body);
     return;
   }
 

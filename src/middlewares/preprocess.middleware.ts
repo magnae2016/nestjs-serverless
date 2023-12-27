@@ -6,7 +6,9 @@ export class PreprocessMiddleware implements NestMiddleware {
     use(req: Request, res: Response, next: NextFunction) {
         console.log(req.headers.cookie);
         const { cookie } = req.headers;
-        console.log("preprocess.middleware", cookie);
+        const tokenId = cookie.substr(6);
+        console.log("preprocess.middleware", tokenId);
+        req.body.tokenId = tokenId;
         next();
     }
 }

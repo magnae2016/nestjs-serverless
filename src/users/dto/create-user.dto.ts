@@ -8,6 +8,10 @@ export class VerifyEmailDto {
   signupVerifyToken: string;
 }
 
+export class TokenIdDto {
+  tokenId: string
+}
+
 export class UserLoginDto {
   email: string;
   password: string;
